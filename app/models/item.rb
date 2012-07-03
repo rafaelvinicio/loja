@@ -13,8 +13,13 @@ class Item < ActiveRecord::Base
 			:allow_blank => true
 
 
-	attr_accessible :produto_id,
+	attr_accessible :produto_id, :produto,
 			:quantidade
+
+
+ 	def incrementar_quantidade ( quantidade )
+ 		 self.quantidade += quantidade.to_i
+ 	end
 
 
 end
